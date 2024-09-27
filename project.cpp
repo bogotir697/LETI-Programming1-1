@@ -13,16 +13,6 @@ bool contains(int item, int arr[]) {
     return 0;
 }
 
-void printBin(long long x) {
-    unsigned long long mask = 1LL << (sizeof(long long) * 8 - 1);
-    cout << endl;
-    for (int i = 0; i <= (sizeof(long long) * 8 - 1); i++) {
-        putchar(mask & x ? '1' : '0');
-        mask >>= 1;
-    }
-    cout << endl;
-}
-
 array<ull, 2> moveBin(array<ull, 2> mask, int delta) {
     int lenLL = sizeof(ull) * 8;
     if (delta - lenLL >= 0) { mask = moveBin(mask, delta + 1 - lenLL); delta = lenLL - 1; }
